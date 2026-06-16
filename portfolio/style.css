@@ -1,0 +1,90 @@
+:root {
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --accent-color: #58a6ff;
+    --card-border: #30363d;
+    --font-family: 'JetBrains Mono', monospace;
+}
+
+[data-theme='light'] {
+    --bg-color: #ffffff;
+    --text-color: #24292e;
+    --accent-color: #0366d6;
+    --card-border: #e1e4e8;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 2rem;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform 0.2s;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    border: 1px solid var(--card-border);
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
+
+.demo-placeholder {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    cursor: default;
+}
+
+[data-theme='light'] .project-card {
+    background-color: rgba(0, 0, 0, 0.02);
+}
